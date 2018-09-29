@@ -1,0 +1,29 @@
+\section{Implementation Results and Comparison}
+\label{Sec:Results}
+
+The algorithm is implemented using Verilog and the target device chosen in an Intel/Altera Stratix IV EP4SGX230KF40C2ES. 
+
+\begin{table}[!h]
+\caption{FPGA implementation comparison}
+\centering
+\begin{tabular}{
+	|P{0.25\columnwidth}
+    |P{0.12\columnwidth}
+    |P{0.12\columnwidth}
+    |P{0.12\columnwidth}
+    |P{0.12\columnwidth}|}
+\hline
+	Resource Utilization & Proposed design & M'jee 2015 & Zhou 2013 & Chandra 2013\\ \hline
+	Resolution & not dependent on sample rate &\multicolumn{3}{P{0.36\columnwidth}|}{dependent on sample rate} \\ \hline
+	Frequency bins & 570 & 64 & 1024 & 8\\ \hline
+	Algorithm & SWIFT & 8-parallel Radix-2 FFT & Radix-2 FFT & Sliding Window DFT\\ \hline
+	Device\ Used & Altera Stratix IV & Xilinx Virtex 5 & Altera Cyclone II & Stratix II \\ \hline
+	Slice\ Registers & 39739 & 3082 & 372 & 1755\\ \hline
+	Slice\ LUTs & 57501 & 12645 & 662 & 2409\\ \hline
+	DSP\ slices\ uses & 328 & 48 & 8 & 128\\ \hline
+	Memory\ kbits & 368 & Data\ unavailable & 82 & 5\\ \hline
+	Clock\ Frequency\ (MHz) & 192 & 30 & 100 & Data unavailable\\ \hline
+	Latency\ (ns) & $\sim$ 250 & Data\ unavailable & $\sim$ 62950 & Data unavailable\\ \hline
+\end{tabular}
+\label{table:FPGA_implementation_comparison}
+\end{table}
